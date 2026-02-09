@@ -10,8 +10,26 @@ import "../styles/global.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Infraestructura Médica</title>
-		<!-- AOS Animation -->
-		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+		<!-- Preconnect to Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Preload LCP Image -->
+		<link
+			rel="preload"
+			as="image"
+			href="/img/hero-img.png"
+			fetchpriority="high"
+		/>
+
+		<!-- AOS Animation - Non-blocking -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/aos@next/dist/aos.css"
+			media="print"
+			onload="this.media='all'"
+		/>
 	</head>
 	<body>
 		<slot />

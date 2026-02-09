@@ -639,15 +639,17 @@ const articles = [
 	</main>
 	<Footer />
 
-	<!-- Swiper Resources -->
+	<!-- Swiper Resources - Non-blocking -->
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		media="print"
+		onload="this.media='all'"
 	/>
 	<script
 		is:inline
 		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-	></script>
+		defer></script>
 	<script is:inline>
 		// Configuración del slider de proyectos
 		new Swiper(".projects-swiper", {
