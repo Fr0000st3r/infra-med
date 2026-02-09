@@ -96,12 +96,15 @@ const articles = [
 		<!-- Hero Section -->
 		<section class="relative h-[800px] w-full overflow-hidden bg-[#0a192f]">
 			<img
-				src="/img/hero-img.png"
+				src="https://res.cloudinary.com/db5aa33ix/image/upload/f_auto,q_auto,w_1920/v1770665854/infra_med/hero-img_gquzpx.png"
+				srcset="https://res.cloudinary.com/db5aa33ix/image/upload/f_auto,q_auto,w_800/v1770665854/infra_med/hero-img_gquzpx.png 800w, https://res.cloudinary.com/db5aa33ix/image/upload/f_auto,q_auto,w_1920/v1770665854/infra_med/hero-img_gquzpx.png 1920w"
+				sizes="(max-width: 768px) 800px, 1920px"
 				class="absolute inset-0 w-full h-full object-cover"
 				alt="Diseño y construcción de infraestructura médica de vanguardia"
 				width="1920"
 				height="800"
 				fetchpriority="high"
+				loading="eager"
 			/>
 			<div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
 			<div
@@ -660,6 +663,16 @@ const articles = [
 			pagination: {
 				el: ".projects-swiper .swiper-pagination",
 				clickable: true,
+				bulletElement: "span",
+				renderBullet: function (index, className) {
+					return (
+						'<span class="' +
+						className +
+						'" role="button" aria-label="Ir a la diapositiva ' +
+						(index + 1) +
+						'"></span>'
+					);
+				},
 			},
 			breakpoints: {
 				768: {
@@ -684,6 +697,16 @@ const articles = [
 			pagination: {
 				el: ".services-swiper .swiper-pagination",
 				clickable: true,
+				bulletElement: "span",
+				renderBullet: function (index, className) {
+					return (
+						'<span class="' +
+						className +
+						'" role="button" aria-label="Ir a servicio ' +
+						(index + 1) +
+						'"></span>'
+					);
+				},
 			},
 			breakpoints: {
 				768: {
@@ -703,6 +726,16 @@ const articles = [
 			pagination: {
 				el: ".blog-swiper .swiper-pagination",
 				clickable: true,
+				bulletElement: "span",
+				renderBullet: function (index, className) {
+					return (
+						'<span class="' +
+						className +
+						'" role="button" aria-label="Ir a artículo ' +
+						(index + 1) +
+						'"></span>'
+					);
+				},
 			},
 			breakpoints: {
 				768: {
