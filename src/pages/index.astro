@@ -95,16 +95,15 @@ const articles = [
 	<main>
 		<!-- Hero Section -->
 		<section class="relative h-[800px] w-full overflow-hidden">
-			<div class="absolute inset-0 bg-black/50 z-10" aria-hidden="true">
-			</div>
 			<img
-				src="https://res.cloudinary.com/db5aa33ix/image/upload/f_auto,q_auto/v1770665854/infra_med/hero-img_gquzpx.png"
+				src="/img/hero-img.png"
 				class="absolute inset-0 w-full h-full object-cover"
 				alt="Diseño y construcción de infraestructura médica de vanguardia"
 				width="1920"
 				height="800"
 				fetchpriority="high"
 			/>
+			<div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
 			<div
 				class="max-container relative h-full flex items-center justify-center text-center"
 			>
@@ -626,7 +625,7 @@ const articles = [
 							>
 							</div>
 							<img
-								src="https://res.cloudinary.com/db5aa33ix/image/upload/f_auto,q_auto/v1770667003/infra_med/person_vector_owx4qu.png"
+								src="/img/person_vector.png"
 								alt="Ingeniero en infraestructura médica"
 								class="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
 								loading="lazy"
@@ -656,12 +655,7 @@ const articles = [
 			slidesPerView: 1.1,
 			spaceBetween: 20,
 			centeredSlides: true,
-			loop: true,
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-				pauseOnMouseEnter: true,
-			},
+			loop: false,
 			pagination: {
 				el: ".projects-swiper .swiper-pagination",
 				clickable: true,
@@ -685,7 +679,7 @@ const articles = [
 			slidesPerView: 1.1,
 			spaceBetween: 20,
 			centeredSlides: true,
-			loop: true,
+			loop: false,
 			pagination: {
 				el: ".services-swiper .swiper-pagination",
 				clickable: true,
@@ -704,7 +698,7 @@ const articles = [
 			slidesPerView: 1.1,
 			spaceBetween: 20,
 			centeredSlides: true,
-			loop: true,
+			loop: false,
 			pagination: {
 				el: ".blog-swiper .swiper-pagination",
 				clickable: true,
