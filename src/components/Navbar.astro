@@ -1,0 +1,124 @@
+---
+
+---
+
+<div class="bg-[#1a365d] text-white py-2 text-[14px]">
+    <div class="max-container flex flex-wrap justify-end gap-5">
+        <div class="flex items-center gap-2">
+            <span>📞</span>
+            <span>33 0000 0000</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <span>✉️</span>
+            <span>contacto@inframedica.com</span>
+        </div>
+    </div>
+</div>
+
+<nav id="navbar" class="bg-white py-4 shadow-sm">
+    <div class="max-container flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3">
+            <img
+                src="https://res.cloudinary.com/db5aa33ix/image/upload/v1770669326/infra_med/logo-infraestructura-medica_copexw.png"
+                alt="Logo Infraestructura Médica - Especialistas en diseño y construcción de hospitales"
+                class="h-10 md:h-12 w-auto object-contain"
+            />
+        </a>
+
+        <!-- Nav Links Desktop -->
+        <ul class="hidden md:flex items-center gap-[37px]">
+            {
+                ["Nosotros", "Servicios", "Proyectos", "Blog", "Contacto"].map(
+                    (item) => (
+                        <li>
+                            <a
+                                href={`#${item.toLowerCase()}`}
+                                class="text-[16px] font-medium text-[#000] hover:text-[#1a365d] transition-colors font-['Montserrat']"
+                            >
+                                {item}
+                            </a>
+                        </li>
+                    ),
+                )
+            }
+        </ul>
+
+        <!-- Mobile Toggle -->
+        <button
+            id="menu-toggle"
+            class="md:hidden text-[#1a365d] focus:outline-none"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-8 h-8"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-[#1a365d] z-[60] flex flex-col items-center justify-center translate-x-full transition-transform duration-300 md:hidden"
+    >
+        <button id="menu-close" class="absolute top-6 right-6 text-white">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="w-10 h-10"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <ul class="flex flex-col items-center gap-8">
+            {
+                ["Nosotros", "Servicios", "Proyectos", "Blog", "Contacto"].map(
+                    (item) => (
+                        <li>
+                            <a
+                                href={`#${item.toLowerCase()}`}
+                                class="text-2xl font-bold text-white hover:text-[#bfa55d] transition-colors font-['Montserrat'] mobile-link"
+                            >
+                                {item}
+                            </a>
+                        </li>
+                    ),
+                )
+            }
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuClose = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const links = document.querySelectorAll(".mobile-link");
+
+    function toggleMenu() {
+        mobileMenu?.classList.toggle("translate-x-full");
+        document.body.classList.toggle("overflow-hidden");
+    }
+
+    menuToggle?.addEventListener("click", toggleMenu);
+    menuClose?.addEventListener("click", toggleMenu);
+
+    links.forEach((link) => {
+        link.addEventListener("click", toggleMenu);
+    });
+</script>

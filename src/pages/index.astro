@@ -1,0 +1,854 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const services = [
+	{
+		title: "Construcción de hospitales, clínicas y consultorios",
+		desc: "En Infraestructura Médica realizamos la construcción de espacios para la salud bajo estrictos estándares de excelencia.",
+		icon: "building-hospital",
+	},
+	{
+		title: "Diseño de proyectos para el sector salud",
+		desc: "Creamos diseños hospitalarios que garantizan funcionalidad, ergonomía y eficiencia, cumpliendo fielmente con la normatividad sanitaria vigente.",
+		icon: "blueprint",
+	},
+	{
+		title: "Remodelación médica",
+		desc: "Optimizamos espacios médicos existentes para modernizar su imagen y asegurar el cumplimiento de permisos y licencias sanitarias (COFEPRIS).",
+		icon: "wrench",
+	},
+	{
+		title: "Venta de equipo médico y mobiliario",
+		desc: "Ofrecemos mobiliario y equipamiento médico de alta calidad para hospitales, clínicas y profesionales del sector salud en México.",
+		icon: "stethoscope",
+	},
+];
+
+const projects = [
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665855/infra_med/recepcion-clinica-medica-diseno-moderno_rxfa24.png",
+		alt: "Recepción de clínica médica con diseño moderno y minimalista",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665855/infra_med/pasillo-hospitalario-diseno-curvo-moderno_yoxbkt.png",
+		alt: "Diseño de pasillo hospitalario moderno con líneas curvas y excelente iluminación",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665854/infra_med/acceso-hospital-remodelacion-moderna_uhryxp.png",
+		alt: "Área de acceso y recepción hospitalaria remodelada bajo normativa vigente",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665855/infra_med/equipo-medico-rayos-x-especializado_iylhtt.png",
+		alt: "Equipamiento de rayos X especializado para infraestructura médica de alta tecnología",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665854/infra_med/construccion-de-clinicas-infraestructura-medica_cfl3ya.webp",
+		alt: "Servicio de construcción de clínicas especializadas en México",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665854/infra_med/construccion-area-lavado-quirurgico_p2qdfn.png",
+		alt: "Construcción de áreas de lavado quirúrgico para hospitales y centros de salud",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665854/infra_med/consultorio-medico-diseno-vidrio_a95n5u.png",
+		alt: "Diseño interior de consultorio médico con divisiones de vidrio modernas",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665854/infra_med/diseno-de-clinicas-medicas-diseno-de-clinicas-diseno-interior-de-clinicas-mexico_mhcjtj.webp",
+		alt: "Diseño interior de clínicas médicas especializadas en México",
+	},
+	{
+		url: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770665854/infra_med/diseno-de-clinicas-medicas-diseno-de-una-clinica-medica-recepcion-de-una-clinica_a6oavb.webp",
+		alt: "Arquitectura y diseño de recepciones para clínicas médicas de vanguardia",
+	},
+];
+
+const articles = [
+	{
+		title: "Diseño de hospitales",
+		desc: "La arquitectura hospitalaria moderna comprende que la atención a la salud no sólo se basa en tratamientos médicos.",
+		img: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770666767/infra_med/diseno-de-hospitales-arquitectura-sanitaria_zfgn40.png",
+		url: "https://infraestructuramedica.mx/diseno-de-hospitales-sanacion-mas-alla-de-la-medicina/",
+	},
+	{
+		title: "Eficiencia médica",
+		desc: "El diseño de un hospital general es un factor clave para garantizar eficiencia, seguridad y calidad en la atención médica.",
+		img: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770666767/infra_med/diseno-hospital-general-eficiencia-medica_dgs8in.webp",
+		url: "https://infraestructuramedica.mx/diseno-de-un-hospital-general-el-secreto-detras-de-la-eficiencia-medica/",
+	},
+	{
+		title: "Centros de salud",
+		desc: "Un plan arquitectónico de centro de salud es el punto de partida para diseñar espacios médicos con una capacidad resolutiva eficaz.",
+		img: "https://res.cloudinary.com/db5aa33ix/image/upload/v1770666767/infra_med/programa-arquitectonico-centro-de-salud-planeacion_wra83m.webp",
+		url: "https://infraestructuramedica.mx/programa-arquitectonico-de-centro-de-salud/",
+	},
+];
+---
+
+<Layout
+	title="Infraestructura Médica | Diseño y Construcción de Espacios para la Salud"
+	description="Especialistas en la construcción de hospitales, clínicas y consultorios. Diseño hospitalario normativo y equipamiento médico de vanguardia en México."
+>
+	<Navbar />
+	<main>
+		<!-- Hero Section -->
+		<section class="relative h-[800px] w-full overflow-hidden">
+			<div
+				class="absolute inset-0 bg-[url('/img/hero-img.png')] bg-cover bg-center bg-no-repeat"
+				aria-hidden="true"
+			>
+				<div class="absolute inset-0 bg-black/50"></div>
+			</div>
+			<div
+				class="max-container relative h-full flex items-center justify-center text-center"
+			>
+				<div
+					class="max-w-[800px] text-white animate-fade-in mx-auto pt-20 md:pt-0 px-4"
+					data-aos="fade-up"
+				>
+					<h1
+						class="text-[32px] md:text-[48px] font-bold leading-tight mb-6 uppercase"
+					>
+						Especialistas en diseño y construcción de espacios para
+						la salud
+					</h1>
+					<p class="text-[14px] md:text-[18px] mb-8 font-medium">
+						Expertos en infraestructura médica cumpliendo con toda
+						la normatividad nacional e internacional.
+					</p>
+					<ul
+						class="space-y-3 mb-8 inline-block text-left text-[14px] md:text-[16px]"
+					>
+						<li class="flex items-center gap-3">
+							<span class="text-[#bfa55d]" aria-hidden="true"
+								>✔</span
+							>
+							Construcción de hospitales y clínicas
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="text-[#bfa55d]" aria-hidden="true"
+								>✔</span
+							>
+							Diseño arquitectónico hospitalario
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="text-[#bfa55d]" aria-hidden="true"
+								>✔</span
+							>
+							Remodelación y adecuación sanitaria
+						</li>
+						<li class="flex items-center gap-3">
+							<span class="text-[#bfa55d]" aria-hidden="true"
+								>✔</span
+							>
+							Equipamiento médico especializado
+						</li>
+					</ul>
+					<div class="mt-4">
+						<a
+							href="#contacto"
+							class="inline-block bg-[#1a365d] hover:bg-[#1a365d]/90 text-white px-8 py-3 rounded-md font-semibold transition-all focus:ring-2 focus:ring-[#bfa55d] text-[14px] md:text-[16px]"
+						>
+							Cotizar Proyecto
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="py-[80px] bg-white" id="servicios">
+			<div class="max-container">
+				<div
+					class="text-center max-w-[800px] mx-auto mb-[40px]"
+					data-aos="fade-up"
+				>
+					<h2
+						class="text-[28px] md:text-[32px] font-bold text-[#000] font-['Montserrat'] uppercase"
+					>
+						Nuestros Servicios Integrales
+					</h2>
+					<p
+						class="mt-4 text-[14px] md:text-[16px] text-[#555] font-['Montserrat'] font-medium"
+					>
+						Proporcionamos soluciones completas en infraestructura
+						médica, asegurando calidad, seguridad y el estricto
+						apego a las Normas Oficiales Mexicanas.
+					</p>
+				</div>
+
+				<div
+					class="swiper services-swiper !overflow-visible md:!overflow-hidden"
+					data-aos="fade-up"
+					data-aos-delay="200"
+				>
+					<div
+						class="swiper-wrapper md:!grid md:grid-cols-2 md:gap-[40px] md:!transform-none"
+					>
+						{
+							services.map((service) => (
+								<div class="swiper-slide !h-auto md:!w-full">
+									<article class="bg-white rounded-[20px] p-[25px] md:p-[30px] shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col items-center justify-center text-center transition-all hover:scale-[1.02] md:aspect-square w-full mx-auto md:max-w-[350px] h-full">
+										<div class="relative mb-[20px] md:mb-[30px]">
+											<svg
+												width="40"
+												height="40"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												class="text-[#000] md:w-[50px] md:h-[50px]"
+												aria-hidden="true"
+											>
+												{service.icon ===
+													"building-hospital" && (
+													<g
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													>
+														<path d="M3 21h18" />
+														<path d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
+														<path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+														<path d="M10 9h4" />
+														<path d="M12 7v4" />
+													</g>
+												)}
+												{service.icon ===
+													"blueprint" && (
+													<g
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													>
+														<path d="M20 11V8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3" />
+														<path d="M20 11v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4" />
+														<path d="M4 11h16" />
+														<path d="M8 3v4M16 3v4M8 17v4M16 17v4" />
+													</g>
+												)}
+												{service.icon === "wrench" && (
+													<g
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													>
+														<path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8L7 10" />
+													</g>
+												)}
+												{service.icon ===
+													"stethoscope" && (
+													<g
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													>
+														<rect
+															x="3"
+															y="5"
+															width="18"
+															height="14"
+															rx="2"
+														/>
+														<path d="M12 8v8M8 12h8" />
+														<path d="M3 10h18" />
+														<path d="M7 5v-1a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v1" />
+													</g>
+												)}
+											</svg>
+											<div class="absolute -top-1 -left-1 bg-white rounded-full p-0.5">
+												<svg
+													width="14"
+													height="14"
+													viewBox="0 0 24 24"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+													class="text-[#ff4d4d] md:w-[18px] md:h-[18px]"
+													aria-hidden="true"
+												>
+													<path
+														d="M12 5V19M5 12H19"
+														stroke="currentColor"
+														stroke-width="4"
+														stroke-linecap="round"
+														stroke-linejoin="round"
+													/>
+												</svg>
+											</div>
+										</div>
+
+										<h3 class="text-[20px] md:text-[24px] font-bold text-[#000] mb-[15px] md:mb-[20px] font-['Montserrat'] uppercase leading-tight">
+											{service.title}
+										</h3>
+										<p class="text-[11px] md:text-[12px] text-[#000] leading-relaxed font-medium">
+											{service.desc}
+										</p>
+									</article>
+								</div>
+							))
+						}
+					</div>
+					<div class="swiper-pagination !-bottom-10 md:hidden"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Projects Section -->
+		<section
+			class="pt-[80px] pb-[100px] md:pb-[160px] bg-white overflow-hidden"
+			id="proyectos"
+		>
+			<div class="max-container mb-[40px]">
+				<div class="text-center max-w-[800px] mx-auto px-4">
+					<h2
+						class="text-[28px] md:text-[32px] font-bold text-[#000] font-['Montserrat'] uppercase"
+					>
+						Nuestros Proyectos Recientes
+					</h2>
+					<p
+						class="mt-4 text-[14px] md:text-[16px] text-[#555] font-['Montserrat'] font-medium"
+					>
+						Conoce nuestro portafolio de construcción y diseño
+						médico, donde la precisión técnica se une con la
+						arquitectura funcional.
+					</p>
+				</div>
+			</div>
+
+			<div
+				class="swiper projects-swiper !overflow-visible px-[5%]"
+				data-aos="fade-up"
+				data-aos-delay="200"
+			>
+				<div class="swiper-wrapper">
+					{
+						projects.map((project) => (
+							<div class="swiper-slide !h-auto">
+								<div class="group relative overflow-hidden rounded-[15px] cursor-pointer bg-gray-200 aspect-[541/305]">
+									<img
+										src={project.url}
+										alt={project.alt}
+										loading="lazy"
+										class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+									/>
+									<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+								</div>
+							</div>
+						))
+					}
+				</div>
+				<div class="swiper-pagination !-bottom-10"></div>
+			</div>
+		</section>
+
+		<!-- Featured Articles Section -->
+		<section class="py-[80px] md:py-[120px] bg-[#F6F6F6]" id="blog">
+			<div class="max-container">
+				<h2
+					class="text-center text-[28px] md:text-[32px] font-bold text-[#000] font-['Montserrat'] mb-[60px] md:mb-[80px] uppercase"
+				>
+					Blog de Arquitectura Médica
+				</h2>
+
+				<div
+					class="swiper blog-swiper !overflow-visible md:!overflow-hidden"
+					data-aos="fade-up"
+					data-aos-delay="200"
+				>
+					<div
+						class="swiper-wrapper md:!grid md:grid-cols-3 md:gap-[36px] md:!transform-none"
+					>
+						{
+							articles.map((article) => (
+								<div class="swiper-slide !h-auto md:!w-full">
+									<article class="bg-white rounded-[15px] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] w-full max-w-[360px] h-full sm:h-[480px] mx-auto flex flex-col group transition-all hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)]">
+										<a
+											href={article.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="block h-[200px] sm:h-[230px] overflow-hidden"
+										>
+											<img
+												src={article.img}
+												alt={article.title}
+												loading="lazy"
+												class="w-full h-full object-cover transition-transform duration-500"
+											/>
+										</a>
+										<div class="flex-1 pt-[20px] px-[20px] sm:px-[28px] pb-[25px] sm:pb-[28px] flex flex-col items-center text-center">
+											<h3 class="text-[18px] sm:text-[20px] font-bold text-[#000] font-['Montserrat'] mb-[15px] min-h-[50px] sm:min-h-[60px] flex items-center justify-center">
+												<a
+													href={article.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="hover:text-[#1a365d] transition-colors uppercase leading-tight"
+												>
+													{article.title}
+												</a>
+											</h3>
+											<p class="text-[14px] sm:text-[16px] text-[#000] leading-snug font-medium font-['Montserrat'] mb-[20px] min-h-[80px] sm:min-h-[100px] flex items-center">
+												{article.desc}
+											</p>
+											<div class="mt-auto">
+												<a
+													href={article.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													class="text-[#1a365d] font-bold text-[13px] sm:text-[14px] uppercase tracking-wider border-b-2 border-[#1a365d] pb-1 hover:text-[#bfa55d] hover:border-[#bfa55d] transition-all"
+												>
+													Ver artículo completo
+												</a>
+											</div>
+										</div>
+									</article>
+								</div>
+							))
+						}
+					</div>
+					<div class="swiper-pagination !-bottom-10 md:hidden"></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section class="py-[80px] md:py-[120px] bg-white" id="contacto">
+			<div class="max-container">
+				<div
+					class="flex flex-col md:flex-row items-center gap-[40px] md:gap-[60px]"
+				>
+					<!-- Formulario de contacto -->
+					<div class="w-full md:w-1/2" data-aos="fade-right">
+						<header class="text-center md:text-left">
+							<h2
+								class="text-[28px] md:text-[36px] font-bold text-[#000] font-['Montserrat'] mb-[10px]"
+							>
+								Hablemos de tu proyecto
+							</h2>
+							<p
+								class="text-[16px] text-[#555] font-['Montserrat'] mb-[40px]"
+							>
+								Expertos en construcción de clínicas y
+								hospitales. Contáctanos para recibir una
+								asesoría especializada en infraestructura
+								médica.
+							</p>
+						</header>
+
+						<div
+							id="form-success"
+							class="hidden flex-col items-center justify-center text-center py-10 animate-fade-in"
+						>
+							<div
+								class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6 mx-auto"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="40"
+									height="40"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="3"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									><polyline points="20 6 9 17 4 12"
+									></polyline></svg
+								>
+							</div>
+							<h3
+								class="text-[24px] font-bold text-[#000] font-['Montserrat'] mb-2"
+							>
+								¡Mensaje Enviado!
+							</h3>
+							<p
+								class="text-[16px] text-[#555] font-['Montserrat']"
+							>
+								Pronto nos pondremos en contacto contigo
+							</p>
+							<button
+								onclick="document.getElementById('form-success').classList.add('hidden'); document.getElementById('contact-form').classList.remove('hidden');"
+								class="mt-8 text-[#1a365d] font-bold underline"
+								>Enviar otro mensaje</button
+							>
+						</div>
+
+						<form
+							id="contact-form"
+							class="space-y-[20px] transition-all"
+						>
+							<div
+								class="grid grid-cols-1 sm:grid-cols-2 gap-[20px]"
+							>
+								<div class="flex flex-col gap-2">
+									<label
+										for="nombre"
+										class="text-[14px] font-bold text-[#000] font-['Montserrat']"
+										>Nombre <span class="text-red-500"
+											>*</span
+										></label
+									>
+									<input
+										type="text"
+										id="nombre"
+										name="nombre"
+										placeholder="Su nombre"
+										class="w-full p-[12px] border border-[#e2e8f0] rounded-[8px] focus:outline-none focus:border-[#1a365d] font-['Montserrat']"
+									/>
+									<span
+										id="error-nombre"
+										class="text-red-500 text-[12px] hidden font-medium"
+									></span>
+								</div>
+								<div class="flex flex-col gap-2">
+									<label
+										for="apellido"
+										class="text-[14px] font-bold text-[#000] font-['Montserrat']"
+										>Apellido <span class="text-red-500"
+											>*</span
+										></label
+									>
+									<input
+										type="text"
+										id="apellido"
+										name="apellido"
+										placeholder="Su apellido"
+										class="w-full p-[12px] border border-[#e2e8f0] rounded-[8px] focus:outline-none focus:border-[#1a365d] font-['Montserrat']"
+									/>
+									<span
+										id="error-apellido"
+										class="text-red-500 text-[12px] hidden font-medium"
+									></span>
+								</div>
+							</div>
+
+							<div
+								class="grid grid-cols-1 sm:grid-cols-2 gap-[20px]"
+							>
+								<div class="flex flex-col gap-2">
+									<label
+										for="email"
+										class="text-[14px] font-bold text-[#000] font-['Montserrat']"
+										>Email <span class="text-red-500"
+											>*</span
+										></label
+									>
+									<input
+										type="text"
+										id="email"
+										name="email"
+										placeholder="ejemplo@correo.com"
+										class="w-full p-[12px] border border-[#e2e8f0] rounded-[8px] focus:outline-none focus:border-[#1a365d] font-['Montserrat']"
+									/>
+									<span
+										id="error-email"
+										class="text-red-500 text-[12px] hidden font-medium"
+									></span>
+								</div>
+								<div class="flex flex-col gap-2">
+									<label
+										for="telefono"
+										class="text-[14px] font-bold text-[#000] font-['Montserrat']"
+										>Teléfono (Opcional)</label
+									>
+									<input
+										type="tel"
+										id="telefono"
+										name="telefono"
+										placeholder="33 0000 0000"
+										class="w-full p-[12px] border border-[#e2e8f0] rounded-[8px] focus:outline-none focus:border-[#1a365d] font-['Montserrat']"
+									/>
+									<span
+										id="error-telefono"
+										class="text-red-500 text-[12px] hidden font-medium"
+									></span>
+								</div>
+							</div>
+
+							<div class="flex flex-col gap-2">
+								<label
+									for="comentarios"
+									class="text-[14px] font-bold text-[#000] font-['Montserrat']"
+									>Comentarios <span class="text-red-500"
+										>*</span
+									></label
+								>
+								<textarea
+									id="comentarios"
+									name="comentarios"
+									rows="4"
+									placeholder="Cuéntanos sobre tu necesidad de infraestructura o diseño..."
+									class="w-full p-[12px] border border-[#e2e8f0] rounded-[8px] focus:outline-none focus:border-[#1a365d] font-['Montserrat'] resize-none"
+								></textarea>
+								<span
+									id="error-comentarios"
+									class="text-red-500 text-[12px] hidden font-medium"
+								></span>
+							</div>
+
+							<div
+								class="text-[12px] text-gray-500 font-['Montserrat'] mb-4 italic"
+							>
+								<span class="text-red-500">*</span> Campos obligatorios
+							</div>
+
+							<button
+								type="submit"
+								class="w-full sm:w-auto bg-[#1a365d] hover:bg-[#1a365d]/90 text-white px-[40px] py-[15px] rounded-[8px] font-bold font-['Montserrat'] transition-all mt-[10px]"
+							>
+								Enviar Mensaje
+							</button>
+						</form>
+					</div>
+
+					<!-- Imagen de contacto -->
+					<div
+						class="hidden md:flex w-full md:w-1/2 justify-center items-center"
+						data-aos="fade-left"
+					>
+						<div
+							class="relative w-full max-w-[500px] animate-fade-in"
+						>
+							<div
+								class="absolute inset-0 bg-[#f0f9ff] rounded-full blur-3xl opacity-50 transform translate-y-10"
+							>
+							</div>
+							<img
+								src="https://res.cloudinary.com/db5aa33ix/image/upload/v1770667003/infra_med/person_vector_owx4qu.png"
+								alt="Ingeniero en infraestructura médica"
+								class="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
+								loading="lazy"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+
+	<!-- Swiper Resources -->
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+	<script
+		is:inline
+		src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+	></script>
+	<script is:inline>
+		// Configuración del slider de proyectos
+		new Swiper(".projects-swiper", {
+			slidesPerView: 1.1,
+			spaceBetween: 20,
+			centeredSlides: true,
+			loop: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
+			},
+			pagination: {
+				el: ".projects-swiper .swiper-pagination",
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					centeredSlides: false,
+					spaceBetween: 30,
+				},
+				1024: {
+					slidesPerView: 2.2,
+					centeredSlides: false,
+					spaceBetween: 40,
+				},
+			},
+		});
+
+		// Configuración del slider de servicios (solo móvil)
+		new Swiper(".services-swiper", {
+			slidesPerView: 1.1,
+			spaceBetween: 20,
+			centeredSlides: true,
+			loop: true,
+			pagination: {
+				el: ".services-swiper .swiper-pagination",
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					enabled: false,
+					slidesPerView: 2,
+					spaceBetween: 40,
+				},
+			},
+		});
+
+		// Configuración del slider de blog (solo móvil)
+		new Swiper(".blog-swiper", {
+			slidesPerView: 1.1,
+			spaceBetween: 20,
+			centeredSlides: true,
+			loop: true,
+			pagination: {
+				el: ".blog-swiper .swiper-pagination",
+				clickable: true,
+			},
+			breakpoints: {
+				768: {
+					enabled: false,
+					slidesPerView: 3,
+					spaceBetween: 36,
+				},
+			},
+		});
+
+		// Validación del formulario de contacto
+		const contactForm = document.getElementById("contact-form");
+		const formSuccess = document.getElementById("form-success");
+
+		if (contactForm) {
+			contactForm.addEventListener("submit", (e) => {
+				e.preventDefault();
+
+				let isValid = true;
+				const formData = new FormData(contactForm);
+				const data = Object.fromEntries(formData.entries());
+
+				// Helper para mostrar/ocultar errores
+				const toggleError = (id, show, message = "") => {
+					const errorSpan = document.getElementById(`error-${id}`);
+					const input = document.getElementById(id);
+					if (show) {
+						errorSpan.textContent = message;
+						errorSpan.classList.remove("hidden");
+						input.classList.add("border-red-500");
+						isValid = false;
+					} else {
+						errorSpan.classList.add("hidden");
+						input.classList.remove("border-red-500");
+					}
+				};
+
+				// Validación Nombre
+				const nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+				if (!data.nombre) {
+					toggleError("nombre", true, "El nombre es obligatorio.");
+				} else if (!nombreRegex.test(data.nombre)) {
+					toggleError("nombre", true, "Solo se permiten letras.");
+				} else if (data.nombre.length > 12) {
+					toggleError("nombre", true, "Máximo 12 caracteres.");
+				} else {
+					toggleError("nombre", false);
+				}
+
+				// Validación Apellido
+				if (!data.apellido) {
+					toggleError(
+						"apellido",
+						true,
+						"El apellido es obligatorio.",
+					);
+				} else if (!nombreRegex.test(data.apellido)) {
+					toggleError("apellido", true, "Solo se permiten letras.");
+				} else if (data.apellido.length > 12) {
+					toggleError("apellido", true, "Máximo 12 caracteres.");
+				} else {
+					toggleError("apellido", false);
+				}
+
+				// Validación Email
+				// Regla: antes de @ solo letras, numeros y puntos
+				const emailParts = data.email.split("@");
+				const emailRegexBeforeAt = /^[a-zA-Z0-9.]+$/;
+				const emailGeneralRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+				if (!data.email) {
+					toggleError("email", true, "El email es obligatorio.");
+				} else if (!emailGeneralRegex.test(data.email)) {
+					toggleError("email", true, "Estructura de email inválida.");
+				} else if (
+					emailParts[0] &&
+					!emailRegexBeforeAt.test(emailParts[0])
+				) {
+					toggleError(
+						"email",
+						true,
+						"El usuario solo permite letras, números y puntos.",
+					);
+				} else {
+					toggleError("email", false);
+				}
+
+				// Validación Teléfono
+				const telRegex = /^\d+$/;
+				if (data.telefono) {
+					if (!telRegex.test(data.telefono)) {
+						toggleError(
+							"telefono",
+							true,
+							"Solo se permiten números.",
+						);
+					} else if (
+						data.telefono.length < 10 ||
+						data.telefono.length > 12
+					) {
+						toggleError(
+							"telefono",
+							true,
+							"Debe tener entre 10 y 12 dígitos.",
+						);
+					} else {
+						toggleError("telefono", false);
+					}
+				} else {
+					toggleError("telefono", false);
+				}
+
+				// Validación Comentarios
+				const comentariosRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s\.]+$/;
+				const urlRegex = /https?:\/\/[^\s]+|www\.[^\s]+/i;
+
+				if (!data.comentarios) {
+					toggleError(
+						"comentarios",
+						true,
+						"El comentario es obligatorio.",
+					);
+				} else if (data.comentarios.length > 250) {
+					toggleError("comentarios", true, "Máximo 250 caracteres.");
+				} else if (!comentariosRegex.test(data.comentarios)) {
+					toggleError(
+						"comentarios",
+						true,
+						"Solo letras y puntos, sin símbolos.",
+					);
+				} else if (urlRegex.test(data.comentarios)) {
+					toggleError(
+						"comentarios",
+						true,
+						"No se permiten enlaces/URLs.",
+					);
+				} else {
+					toggleError("comentarios", false);
+				}
+
+				if (isValid) {
+					// Simular envío
+					contactForm.classList.add("hidden");
+					formSuccess.classList.remove("hidden");
+					contactForm.reset();
+					// Desplazar al inicio del formulario para ver el mensaje
+					document
+						.getElementById("contacto")
+						.scrollIntoView({ behavior: "smooth" });
+				}
+			});
+		}
+	</script>
+</Layout>
