@@ -94,7 +94,9 @@ const articles = [
 	<Navbar />
 	<main>
 		<!-- Hero Section -->
-		<section class="relative h-[800px] w-full overflow-hidden bg-[#0a192f]">
+		<section
+			class="relative h-[85vh] md:h-[800px] w-full overflow-hidden bg-[#0a192f]"
+		>
 			<img
 				src="/img/hero-img.png"
 				class="absolute inset-0 w-full h-full object-cover"
@@ -183,7 +185,7 @@ const articles = [
 				</div>
 
 				<div
-					class="swiper services-swiper overflow-hidden"
+					class="swiper services-swiper overflow-hidden pb-14 md:pb-0"
 					data-aos="fade-up"
 					data-aos-delay="200"
 				>
@@ -191,9 +193,16 @@ const articles = [
 						class="swiper-wrapper md:!grid md:grid-cols-2 md:gap-[40px] md:!transform-none"
 					>
 						{
-							services.map((service) => (
+							services.map((service, index) => (
 								<div class="swiper-slide !h-auto md:!w-full">
-									<article class="bg-white rounded-[20px] p-[25px] md:p-[30px] shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col items-center justify-center text-center transition-all hover:scale-[1.02] md:aspect-square w-full mx-auto md:max-w-[350px] h-full">
+									<article
+										class:list={[
+											"bg-white rounded-[20px] p-[25px] md:p-[30px] shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-gray-50 flex flex-col items-center justify-center text-center transition-all hover:scale-[1.02] md:aspect-square w-full mx-auto md:max-w-[350px] h-full",
+											index % 2 === 0
+												? "md:ml-auto md:mr-0"
+												: "md:mr-auto md:ml-0",
+										]}
+									>
 										<div class="relative mb-[20px] md:mb-[30px]">
 											<svg
 												width="40"
@@ -296,7 +305,7 @@ const articles = [
 							))
 						}
 					</div>
-					<div class="swiper-pagination !-bottom-10 md:hidden"></div>
+					<div class="swiper-pagination !bottom-2 md:hidden"></div>
 				</div>
 			</div>
 		</section>
@@ -324,7 +333,7 @@ const articles = [
 			</div>
 
 			<div
-				class="swiper projects-swiper overflow-hidden"
+				class="swiper projects-swiper overflow-hidden pb-12 md:pb-0"
 				data-aos="fade-up"
 				data-aos-delay="200"
 			>
@@ -347,7 +356,7 @@ const articles = [
 						))
 					}
 				</div>
-				<div class="swiper-pagination !-bottom-10"></div>
+				<div class="swiper-pagination !bottom-0"></div>
 			</div>
 		</section>
 
@@ -361,7 +370,7 @@ const articles = [
 				</h2>
 
 				<div
-					class="swiper blog-swiper overflow-hidden"
+					class="swiper blog-swiper overflow-hidden pb-16 md:pb-0"
 					data-aos="fade-up"
 					data-aos-delay="200"
 				>
@@ -417,7 +426,7 @@ const articles = [
 							))
 						}
 					</div>
-					<div class="swiper-pagination !-bottom-10 md:hidden"></div>
+					<div class="swiper-pagination !bottom-0 md:hidden"></div>
 				</div>
 			</div>
 		</section>
@@ -655,7 +664,11 @@ const articles = [
 			slidesPerView: 1.1,
 			spaceBetween: 20,
 			centeredSlides: true,
-			loop: false,
+			loop: true,
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			pagination: {
 				el: ".projects-swiper .swiper-pagination",
 				clickable: true,
@@ -675,14 +688,30 @@ const articles = [
 					slidesPerView: 2,
 					centeredSlides: false,
 					spaceBetween: 30,
+					autoplay: {
+						delay: 3000,
+						disableOnInteraction: false,
+					},
 				},
 				1024: {
 					slidesPerView: 2.2,
 					centeredSlides: false,
 					spaceBetween: 40,
+					autoplay: {
+						delay: 3000,
+						disableOnInteraction: false,
+					},
 				},
 			},
 		});
+
+		// Deshabilitar autoplay en móvil manualmente si es necesario o confiar en breakpoints
+		// Para asegurar que SOLO funcione en desktop, modificamos la lógica:
+		const projectsSwiper =
+			document.querySelector(".projects-swiper").swiper;
+		if (window.innerWidth < 768) {
+			projectsSwiper.autoplay.stop();
+		}
 
 		// Configuración del slider de servicios (solo móvil)
 		new Swiper(".services-swiper", {
@@ -885,4 +914,65 @@ const articles = [
 			});
 		}
 	</script>
+
+	<style is:global>
+		/* Estilos para el indicador de líneas del Swiper de Servicios */
+		.services-swiper .swiper-pagination-bullet {
+			width: 30px !important;
+			height: 4px !important;
+			border-radius: 2px !important;
+			background: #e2e8f0 !important;
+			opacity: 1 !important;
+			transition: all 0.3s ease !important;
+			margin: 0 4px !important;
+		}
+
+		.services-swiper .swiper-pagination-bullet-active {
+			background: #1a365d !important;
+			width: 45px !important;
+		}
+
+		/* Asegurar que el contenedor del swiper permita ver las sombras */
+		.services-swiper {
+			margin-bottom: -20px;
+			padding-bottom: 60px !important;
+		}
+
+		@media (min-width: 768px) {
+			.services-swiper {
+				margin-bottom: 0;
+				padding-bottom: 50px !important;
+			}
+		}
+
+		/* Estilos para los bullets del Swiper de Proyectos */
+		.projects-swiper .swiper-pagination-bullet {
+			width: 10px !important;
+			height: 10px !important;
+			background: #e2e8f0 !important;
+			opacity: 1 !important;
+			transition: all 0.3s ease !important;
+		}
+
+		.projects-swiper .swiper-pagination-bullet-active {
+			background: #1a365d !important;
+			transform: scale(1.2);
+		}
+
+		/* Estilos para el indicador de líneas del Swiper de Blog */
+		.blog-swiper .swiper-pagination-bullet {
+			width: 30px !important;
+			height: 4px !important;
+			border-radius: 2px !important;
+			background: #e2e8f0 !important;
+			opacity: 1 !important;
+			transition: all 0.3s ease !important;
+			margin: 0 4px !important;
+		}
+
+		.blog-swiper .swiper-pagination-bullet-active {
+			background: #1a365d !important;
+			width: 45px !important;
+		}
+	</style>
 </Layout>
